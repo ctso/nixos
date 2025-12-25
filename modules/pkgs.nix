@@ -10,7 +10,6 @@
     wget
     jq
     kubectl
-    k9s
   ];
 }
 

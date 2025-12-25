@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ./zsh
     ./aerospace
+    ./bat
     ./ghostty
+    ./zsh
   ];
 }

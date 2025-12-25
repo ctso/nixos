@@ -10,10 +10,6 @@
       cleanup = "uninstall";
     };
 
-    brews = [
-      "ripgrep"
-    ];
-
     taps = [
       "nikitabobko/tap"
     ];

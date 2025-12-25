@@ -8,6 +8,9 @@
     ripgrep
     git
     wget
+    jq
+    kubectl
+    k9s
   ];
 }
 

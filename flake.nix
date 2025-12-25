@@ -59,8 +59,6 @@
       # Use legacyPackages directly from nixpkgs flake (system-keyed)
       legacyPackages = nixpkgs.legacyPackages;
 
-      overlays = import ./overlays { inherit inputs; };
-
       # System-specific formatter
       formatter = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux" ] (system: nixpkgs.legacyPackages.${system}.nixpkgs-rfc-style);
 
@@ -170,7 +168,7 @@
         );
     in
     {
-      inherit legacyPackages overlays formatter;
+      inherit legacyPackages formatter;
 
       nixosModules = {
         common = import ./modules/nixos/common;

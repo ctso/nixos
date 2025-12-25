@@ -6,6 +6,7 @@
     ./atuin
     ./bat
     ./ghostty
+    ./starship
     ./zsh
   ];
 }

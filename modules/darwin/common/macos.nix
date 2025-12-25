@@ -43,6 +43,17 @@
       InitialKeyRepeat = 10;
       ApplePressAndHoldEnabled = false;
     };
+    # Disable Spotlight's cmd+space shortcut to free it for Raycast
+    # Key 64 is the Spotlight search shortcut in AppleSymbolicHotKeys
+    CustomUserPreferences = {
+      "com.apple.symbolichotkeys" = {
+        AppleSymbolicHotKeys = {
+          "64" = {
+            enabled = false;
+          };
+        };
+      };
+    };
   };
 }
 

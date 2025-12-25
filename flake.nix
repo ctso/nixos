@@ -197,8 +197,8 @@
 
       darwinConfigurations = builtins.listToAttrs [
         (createDarwin "ctso-macbook")
+        (createDarwin "ctso-macstudio")
+        (createDarwin "ctso-givebutter")
       ];
-
-      darwinPackages = self.darwinConfigurations.ctso-macbook.pkgs;
     };
 }

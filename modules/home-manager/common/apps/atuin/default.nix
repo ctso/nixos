@@ -3,6 +3,7 @@
 {
   programs.atuin = {
     enable = true;
+    enableZshIntegration = true;
   };
 
   catppuccin.atuin = {

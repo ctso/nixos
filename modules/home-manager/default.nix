@@ -3,13 +3,14 @@
   username,
   hostname,
   specialArgs,
+  flakeRoot ? "/etc/nixos",
 }:
 
 let
   buildHomeManagerConfig =
     hostname:
     let
-      absoluteHomeManagerPath = "/etc/nixos/modules/home-manager";
+      absoluteHomeManagerPath = "${flakeRoot}/modules/home-manager";
       hostPath = "${absoluteHomeManagerPath}/hosts/${hostname}";
       sharedPath = "${absoluteHomeManagerPath}/shared";
     in

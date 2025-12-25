@@ -1,10 +1,11 @@
 {
   hostname,
   lib,
+  flakeRoot ? null,
 }:
 
 let
-  absoluteHomeManagerPath = "/etc/nixos/modules/home-manager";
+  absoluteHomeManagerPath = if flakeRoot != null then "${flakeRoot}/modules/home-manager" else "/etc/nixos/modules/home-manager";
 
   linkHostApp =
     config: app:

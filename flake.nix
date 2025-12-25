@@ -69,6 +69,7 @@
         import ./util.nix {
           hostname = hostname;
           lib = nixpkgs.lib;
+          flakeRoot = self.outPath;
         };
 
       createNixOS =
@@ -103,6 +104,7 @@
                   specialArgs
                   ;
                 username = vars.defaultUser;
+                flakeRoot = self.outPath;
               })
               home-manager.nixosModules.home-manager
               agenix.nixosModules.default
@@ -146,6 +148,7 @@
                   specialArgs
                   ;
                 username = vars.defaultUser;
+                flakeRoot = self.outPath;
               })
               home-manager.darwinModules.home-manager
               nix-homebrew.darwinModules.nix-homebrew

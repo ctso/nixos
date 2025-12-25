@@ -31,6 +31,7 @@
           "helium-browser"
           "tailscale-app"
           "ghostty"
+          "cursor"
 
           # Fonts
           "font-victor-mono-nerd-font"

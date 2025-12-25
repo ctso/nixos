@@ -5,12 +5,13 @@
     ./aerospace
     ./atuin
     ./bat
-    ./ghostty
-    ./starship
-    ./zsh
+    ./eza
     ./fastfetch
+    ./ghostty
     ./lazygit
     ./nvim
-    ./eza
+    ./starship
+    ./tmux
+    ./zsh
   ];
 }

@@ -29,10 +29,12 @@
           "ghostty"
           "cursor"
           "raycast"
+          "spotify"
 
           # Fonts
           "font-victor-mono-nerd-font"
           "font-commit-mono-nerd-font"
+          "font-jetbrains-mono-nerd-font"
           "sf-symbols"
         ];
   };

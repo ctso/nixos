@@ -73,3 +73,8 @@ if.app-id = 'net.imput.helium'
 check-further-callbacks = true
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+check-further-callbacks = true
+run = ['layout floating', 'move-node-to-workspace 2']

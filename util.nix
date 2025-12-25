@@ -8,15 +8,6 @@ let
   absoluteHomeManagerPath = if flakeRoot != null then "${flakeRoot}/home-manager" else "/etc/nixos/home-manager";
   absoluteModulesPath = if flakeRoot != null then "${flakeRoot}/modules" else "/etc/nixos/modules";
 
-  linkHostApp =
-    config: app:
-    let
-      hostPath = "${absoluteHomeManagerPath}/${hostname}";
-    in
-    {
-      ".config/${app}".source = config.lib.file.mkOutOfStoreSymlink "${hostPath}/apps/${app}/config";
-    };
-
   linkSharedApp =
     config: app:
     let
@@ -27,7 +18,7 @@ let
     };
 
   util = {
-    inherit linkHostApp linkSharedApp;
+    inherit linkSharedApp;
   };
 in
 util

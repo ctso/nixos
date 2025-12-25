@@ -3,7 +3,6 @@
 {
   imports = [
     hmModules.common
-    ./apps
   ];
 }
 

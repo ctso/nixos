@@ -30,6 +30,7 @@
           "cursor"
           "raycast"
           "spotify"
+          "orbstack"
 
           # Fonts
           "font-victor-mono-nerd-font"

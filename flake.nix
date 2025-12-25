@@ -39,6 +39,9 @@
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+    };
   };
 
   outputs =
@@ -51,6 +54,7 @@
       home-manager,
       agenix,
       impermanence,
+      catppuccin,
       ...
     }@inputs:
     let

@@ -4,5 +4,6 @@
   imports = [
     ./zsh
     ./aerospace
+    ./ghostty
   ];
 }

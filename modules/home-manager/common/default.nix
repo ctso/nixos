@@ -1,7 +1,8 @@
-{ vars, ... }:
+{ vars, inputs, ... }:
 
 {
   imports = [
+    inputs.catppuccin.homeModules.catppuccin
     ./users/${vars.defaultUser}.nix
     ./apps
   ];

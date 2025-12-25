@@ -25,11 +25,14 @@
           greedy = true;
         })
         [
+          # Apps
+          "1password"
           "aerospace"
           "helium-browser"
           "tailscale-app"
           "ghostty"
 
+          # Fonts
           "font-victor-mono-nerd-font"
           "font-commit-mono-nerd-font"
           "sf-symbols"

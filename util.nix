@@ -5,12 +5,13 @@
 }:
 
 let
-  absoluteHomeManagerPath = if flakeRoot != null then "${flakeRoot}/modules/home-manager" else "/etc/nixos/modules/home-manager";
+  absoluteHomeManagerPath = if flakeRoot != null then "${flakeRoot}/home-manager" else "/etc/nixos/home-manager";
+  absoluteModulesPath = if flakeRoot != null then "${flakeRoot}/modules" else "/etc/nixos/modules";
 
   linkHostApp =
     config: app:
     let
-      hostPath = "${absoluteHomeManagerPath}/hosts/${hostname}";
+      hostPath = "${absoluteHomeManagerPath}/${hostname}";
     in
     {
       ".config/${app}".source = config.lib.file.mkOutOfStoreSymlink "${hostPath}/apps/${app}/config";
@@ -19,7 +20,7 @@ let
   linkSharedApp =
     config: app:
     let
-      sharedPath = "${absoluteHomeManagerPath}/shared";
+      sharedPath = "${absoluteModulesPath}/home-manager/common";
     in
     {
       ".config/${app}".source = config.lib.file.mkOutOfStoreSymlink "${sharedPath}/apps/${app}/config";

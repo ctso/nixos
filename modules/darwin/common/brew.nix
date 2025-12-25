@@ -32,6 +32,7 @@
           "tailscale-app"
           "ghostty"
           "cursor"
+          "raycast"
 
           # Fonts
           "font-victor-mono-nerd-font"
@@ -40,3 +41,4 @@
         ];
   };
 }
+

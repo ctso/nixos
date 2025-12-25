@@ -136,3 +136,4 @@ run = ['layout floating', 'move-node-to-workspace F']
 if.app-name-regex-substring = 'Youtube Music'
 check-further-callbacks = true
 run = ['layout tiling', 'move-node-to-workspace M']
+

@@ -15,3 +15,4 @@
 
   home.file = util.linkSharedApp config "zsh";
 }
+

@@ -77,13 +77,13 @@
         (
           let
             commonVars = (
-              import ./modules/shared/vars.nix {
+              import ./modules/vars.nix {
                 inherit
                   hostname
                   ;
               }
             );
-            vars = commonVars // (import ./modules/hosts/${commonVars.hostname}/vars.nix);
+            vars = commonVars // (if builtins.pathExists ./hosts/${commonVars.hostname}/vars.nix then import ./hosts/${commonVars.hostname}/vars.nix else {});
 
             specialArgs = {
               inherit
@@ -92,20 +92,19 @@
                 vars
                 ;
               util = mkUtil vars.hostname;
+              nixosModules = outputs.nixosModules;
+              hmModules = outputs.hmModules;
             };
 
             modules = [
-              (import ./modules/hosts/${vars.hostname})
-              (import ./modules/shared/nixos)
-              (import ./modules/home-manager {
-                inherit
-                  inputs
-                  hostname
-                  specialArgs
-                  ;
-                username = vars.defaultUser;
-                flakeRoot = self.outPath;
-              })
+              (import ./hosts/${vars.hostname})
+              outputs.nixosModules.common
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.extraSpecialArgs = specialArgs;
+                home-manager.users."${vars.defaultUser}" = import ./home-manager/${vars.hostname};
+              }
               home-manager.nixosModules.home-manager
               agenix.nixosModules.default
               impermanence.nixosModules.impermanence
@@ -124,7 +123,7 @@
         (
           let
             vars = (
-              import ./modules/shared/vars.nix {
+              import ./modules/vars.nix {
                 inherit
                   hostname
                   ;
@@ -137,19 +136,18 @@
                 vars
                 ;
               util = mkUtil vars.hostname;
+              darwinModules = outputs.darwinModules;
+              hmModules = outputs.hmModules;
             };
             modules = [
-              (import ./modules/hosts/${vars.hostname})
-              (import ./modules/shared/darwin)
-              (import ./modules/home-manager {
-                inherit
-                  inputs
-                  hostname
-                  specialArgs
-                  ;
-                username = vars.defaultUser;
-                flakeRoot = self.outPath;
-              })
+              (import ./hosts/${vars.hostname})
+              outputs.darwinModules.common
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.extraSpecialArgs = specialArgs;
+                home-manager.users."${vars.defaultUser}" = import ./home-manager/${vars.hostname};
+              }
               home-manager.darwinModules.home-manager
               nix-homebrew.darwinModules.nix-homebrew
               {
@@ -173,6 +171,18 @@
     in
     {
       inherit legacyPackages overlays formatter;
+
+      nixosModules = {
+        common = import ./modules/nixos/common;
+      };
+
+      darwinModules = {
+        common = import ./modules/darwin/common;
+      };
+
+      hmModules = {
+        common = import ./modules/home-manager/common;
+      };
 
       nixosConfigurations = builtins.listToAttrs [
       #  (createNixOS "meatwad")

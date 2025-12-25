@@ -1,0 +1,1 @@
+export FROM_NIXOS=true

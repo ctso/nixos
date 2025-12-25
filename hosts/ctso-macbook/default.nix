@@ -1,7 +1,8 @@
-{ vars, ... }:
+{ vars, darwinModules, ... }:
 
 {
   imports = [
+    darwinModules.common
   ];
 
   networking = {
@@ -13,3 +14,4 @@
 
   system.stateVersion = 4;
 }
+

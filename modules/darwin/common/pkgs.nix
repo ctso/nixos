@@ -2,10 +2,11 @@
 
 {
   imports = [
-    ../pkgs.nix
+    ../../pkgs.nix
   ];
 
   environment.systemPackages = with pkgs; [
     just
   ];
 }
+

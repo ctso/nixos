@@ -26,11 +26,16 @@ in
     homeManagerConfig = buildHomeManagerConfig hostname;
   };
   home-manager.users."${username}" =
-    { ... }:
+    { pkgs, lib, ... }:
+    let
+      darwinHomeManagerPath = "${flakeRoot}/modules/shared/darwin/home-manager/default.nix";
+    in
     {
       imports = [
         ./shared
         ./hosts/${hostname}
+      ] ++ lib.optionals (pkgs.stdenv.isDarwin) [
+        darwinHomeManagerPath
       ];
     };
 }

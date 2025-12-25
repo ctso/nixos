@@ -9,5 +9,6 @@
     ./starship
     ./zsh
     ./fastfetch
+    ./lazygit
   ];
 }

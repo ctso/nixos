@@ -11,6 +11,7 @@
     enableCompletion = true;
     shellAliases = {
       ff = "fastfetch";
+      lg = "lazygit";
     };
   };
 }

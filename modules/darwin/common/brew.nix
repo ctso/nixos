@@ -31,6 +31,7 @@
           "raycast"
           "spotify"
           "orbstack"
+          "obsidian"
 
           # Fonts
           "font-victor-mono-nerd-font"

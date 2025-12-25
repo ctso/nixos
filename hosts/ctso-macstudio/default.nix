@@ -3,6 +3,7 @@
 {
   imports = [
     darwinModules.common
+    darwinModules.personal
   ];
 
   networking = {

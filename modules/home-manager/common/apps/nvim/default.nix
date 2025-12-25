@@ -7,6 +7,7 @@
     tree-sitter
     bottom
     gettext
+    opencode
   ];
 
   home.file.".config/nvim" = {

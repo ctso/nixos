@@ -185,6 +185,7 @@
 
       darwinModules = {
         common = import ./modules/darwin/common;
+        personal = import ./modules/darwin/personal;
       };
 
       hmModules = {

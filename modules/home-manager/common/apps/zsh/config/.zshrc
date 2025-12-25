@@ -1,1 +1,1 @@
-export FROM_NIXOS=true
+eval "$(atuin init zsh)"

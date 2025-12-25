@@ -67,11 +67,6 @@ minus = 'resize smart -50'
 equal = 'resize smart +50'
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
-check-further-callbacks = true
-run = ['layout floating']
-
-[[on-window-detected]]
 if.app-id = 'net.imput.helium'
 check-further-callbacks = true
 if.window-title-regex-substring = 'Picture-in-Picture'

@@ -7,9 +7,8 @@
     settings = {
       shell-integration = "zsh";
       shell-integration-features = "cursor,title,sudo";
-      font-family = "VictorMono Nerd Font Mono";
-      font-size = 14;
-      background-opacity = 0.90;
+      font-family = "JetBrainsMono Nerd Font Mono";
+      background-opacity = 0.95;
     };
   } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     package = null;

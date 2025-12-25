@@ -65,6 +65,11 @@ f = [
   'layout floating tiling', 
 ] 
 
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+
 minus = 'resize smart -50'
 equal = 'resize smart +50'
 

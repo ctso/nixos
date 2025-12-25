@@ -42,6 +42,10 @@
     catppuccin = {
       url = "github:catppuccin/nix";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -55,6 +59,7 @@
       agenix,
       impermanence,
       catppuccin,
+      nixvim,
       ...
     }@inputs:
     let

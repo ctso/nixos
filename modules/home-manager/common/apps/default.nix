@@ -10,5 +10,6 @@
     ./zsh
     ./fastfetch
     ./lazygit
+    ./nvim
   ];
 }

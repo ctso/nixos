@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.catppuccin.homeModules.catppuccin
+    inputs.nixvim.homeManagerModules.nixvim
     ./users/${vars.defaultUser}.nix
     ./apps
   ];

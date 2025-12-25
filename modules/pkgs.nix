@@ -5,11 +5,12 @@
 
   environment.systemPackages = with pkgs; [
     fzf
-    ripgrep
     git
-    wget
     jq
+    just
     kubectl
+    ripgrep
+    wget
   ];
 }
 

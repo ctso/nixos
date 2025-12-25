@@ -27,6 +27,8 @@ alt-semicolon = [
 ]
 
 alt-tab = 'workspace-back-and-forth'
+alt-slash = 'layout tiles accordion'
+alt-comma = 'layout horizontal vertical'
 
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -48,8 +50,6 @@ alt-shift-b = 'move-node-to-workspace B'
 alt-shift-s = 'move-node-to-workspace S'
 alt-shift-x = 'move-node-to-workspace X'
 
-# alt-m = 'exec-and-forget sketchybar --trigger aerospace_switch'
-
 [workspace-to-monitor-force-assignment]
 S = [ 'secondary', 'main' ]
 
@@ -57,17 +57,11 @@ S = [ 'secondary', 'main' ]
 esc = [
   'reload-config', 
   'mode main', 
-  # 'exec-and-forget sketchybar --reload',
-  # 'exec-and-forget sleep 0.2 && sketchybar --trigger send_message MESSAGE="Aerospace Reloaded"',
 ]
 
-t = [
-  'layout h_tiles v_accordion', 
-] 
 f = [
   'layout floating tiling', 
 ] 
-# backspace = ['close-all-windows-but-current', 'mode main']
 
 minus = 'resize smart -50'
 equal = 'resize smart +50'

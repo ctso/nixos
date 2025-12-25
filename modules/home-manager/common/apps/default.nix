@@ -8,5 +8,6 @@
     ./ghostty
     ./starship
     ./zsh
+    ./fastfetch
   ];
 }

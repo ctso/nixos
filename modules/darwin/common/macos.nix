@@ -38,6 +38,9 @@
         "/Applications/Ghostty.app"
       ];
     };
+    WindowManager = {
+      EnableStandardClickToShowDesktop = false;
+    };
     NSGlobalDomain = {
       KeyRepeat = 1;
       InitialKeyRepeat = 10;
@@ -56,4 +59,3 @@
     };
   };
 }
-

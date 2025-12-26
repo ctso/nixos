@@ -46,6 +46,12 @@ alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-s = 'workspace S'
 
+f1 = 'workspace 1'
+f2 = 'workspace 2'
+f3 = 'workspace 3'
+f4 = 'workspace 4'
+f12 = 'layout floating tiling'
+
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -80,6 +86,28 @@ if.window-title-regex-substring = 'Picture-in-Picture'
 run = ['layout floating']
 
 [[on-window-detected]]
+if.app-id = 'net.imput.helium'
+check-further-callbacks = true
+if.window-title-regex-substring = 'YouTube|Frigate'
+run = ['move-node-to-workspace S']
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
 check-further-callbacks = true
-run = ['layout floating', 'move-node-to-workspace 2']
+run = ['layout floating', 'move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+check-further-callbacks = true
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+check-further-callbacks = true
+run = ['layout floating', 'move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+check-further-callbacks = true
+run = ['layout floating', 'move-node-to-workspace 3']
+

@@ -5,13 +5,13 @@
     enable = true;
 
     settings = {
-      keybind = "global:cmd+backquote=toggle_quick_terminal";
+      keybind = "global:alt+backquote=toggle_quick_terminal";
 
       shell-integration = "zsh";
       shell-integration-features = "cursor,title,sudo";
 
       font-family = "JetBrainsMono Nerd Font Mono";
-      
+
       background-opacity = 0.95;
       background-blur = 20;
 

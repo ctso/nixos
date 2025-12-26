@@ -32,6 +32,7 @@
           "spotify"
           "orbstack"
           "obsidian"
+          "jan"
 
           # Fonts
           "font-victor-mono-nerd-font"

@@ -32,7 +32,7 @@
           "spotify"
           "orbstack"
           "obsidian"
-          "jan"
+          "chatgpt"
 
           # Fonts
           "font-victor-mono-nerd-font"

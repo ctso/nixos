@@ -10,6 +10,7 @@
     ./ghostty
     ./lazygit
     ./nvim
+    ./opencode
     ./starship
     ./tmux
     ./zsh

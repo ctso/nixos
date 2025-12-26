@@ -10,7 +10,8 @@
     jq
     just
     kubectl
-    nodejs_24
+    nodejs_22
+    (corepack.override { nodejs = nodejs_22; })
     php83
     python314
     ripgrep

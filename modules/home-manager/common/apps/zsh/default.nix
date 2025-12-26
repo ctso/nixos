@@ -19,6 +19,10 @@
       la = "eza -abhl --icons --group-directories-first";
       lt = "eza --tree --level=2 --icons";
     };
+    initContent = ''
+      # Add local node_modules/.bin to PATH
+      export PATH="./node_modules/.bin:$PATH"
+    '';
   };
 }
 

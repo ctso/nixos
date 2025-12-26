@@ -15,5 +15,6 @@
     ./tmux
     ./zsh
     ./zellij
+    ./mise
   ];
 }

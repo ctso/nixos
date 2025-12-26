@@ -17,7 +17,6 @@
     ripgrep
     rustup
     wget
-    mise
   ];
 }
 

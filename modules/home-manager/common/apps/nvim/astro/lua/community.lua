@@ -8,5 +8,7 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.ai.opencode-nvim" },
+  { import = "astrocommunity.recipes.ai" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   -- import/override with your plugins folder
 }

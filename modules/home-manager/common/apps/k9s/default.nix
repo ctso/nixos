@@ -3,6 +3,11 @@
 {
   programs.k9s = {
     enable = true;
+    settings = {
+      ui = {
+        logoless = true;
+      };
+    };
   };
 
   catppuccin.k9s = {

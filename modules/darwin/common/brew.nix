@@ -33,6 +33,7 @@
           "orbstack"
           "obsidian"
           "chatgpt"
+          "discord"
 
           # Fonts
           "font-victor-mono-nerd-font"
@@ -42,4 +43,3 @@
         ];
   };
 }
-

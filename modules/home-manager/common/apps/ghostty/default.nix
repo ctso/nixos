@@ -5,11 +5,17 @@
     enable = true;
 
     settings = {
+      keybind = "global:cmd+backquote=toggle_quick_terminal";
+
       shell-integration = "zsh";
       shell-integration-features = "cursor,title,sudo";
+
       font-family = "JetBrainsMono Nerd Font Mono";
+      
       background-opacity = 0.95;
-      keybind = "global:cmd+backquote=toggle_quick_terminal";
+      background-blur = 20;
+
+      quick-terminal-position = "center";
     };
   } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     package = null;

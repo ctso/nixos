@@ -13,5 +13,6 @@
     ./starship
     ./tmux
     ./zsh
+    ./zellij
   ];
 }

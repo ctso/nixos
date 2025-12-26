@@ -16,5 +16,6 @@
     ./zsh
     ./zellij
     ./mise
+    ./k9s
   ];
 }

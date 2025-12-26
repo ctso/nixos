@@ -4,8 +4,10 @@
   programs.k9s = {
     enable = true;
     settings = {
-      ui = {
-        logoless = true;
+      k9s = {
+        ui = {
+          logoless = true;
+        };
       };
     };
   };

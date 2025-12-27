@@ -7,7 +7,7 @@
     primaryUser = vars.defaultUser;
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToEscape = true;
+      remapCapsLockToEscape = false;
     };
   };
 

@@ -24,7 +24,6 @@ cmd-alt-h = [] # Disable "hide others"
 
 alt-semicolon = ['mode service']
 
-alt-tab = 'workspace-back-and-forth'
 alt-slash = 'layout tiles accordion'
 alt-comma = 'layout horizontal vertical'
 
@@ -52,6 +51,16 @@ f4 = 'workspace 4'
 f20 = ['exec-and-forget ~/.config/aerospace/aerospace-preset']
 f19 = ['layout floating tiling']
 f17 = ['workspace --wrap-around next']
+
+
+shift-ctrl-alt-cmd-1 = ['workspace 1']
+shift-ctrl-alt-cmd-2 = ['workspace 2']
+shift-ctrl-alt-cmd-3 = ['workspace 3']
+shift-ctrl-alt-cmd-4 = ['workspace 4']
+
+shift-ctrl-alt-cmd-f = ['layout floating tiling']
+shift-ctrl-alt-cmd-a = ['workspace-back-and-forth']
+shift-ctrl-alt-cmd-n = ['workspace --wrap-around next']
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+function getWindowId() {
+    local workspace=$1
+    local appBundleId=$2
+
+    aerospace list-windows --workspace "$workspace" --app-bundle-id "$appBundleId" --format '%{window-id}'
+}
+
+# Setup Workspace 1
+GHOSTTY_ID=$(getWindowId 1 "com.mitchellh.ghostty")
+HELIUM_ID=$(getWindowId 1 "net.imput.helium")
+
+aerospace move --window-id $HELIUM_ID left
+aerospace move --window-id $GHOSTTY_ID right
+aerospace resize --window-id $GHOSTTY_ID smart 2064

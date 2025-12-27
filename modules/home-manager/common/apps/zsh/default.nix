@@ -22,6 +22,9 @@
     initContent = ''
       # Add local node_modules/.bin to PATH
       export PATH="./node_modules/.bin:$PATH"
+      
+      # Add ~/.bin to PATH
+      export PATH="$HOME/.bin:$PATH"
     '';
   };
 }

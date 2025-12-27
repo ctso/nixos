@@ -11,20 +11,18 @@ default-root-container-layout = 'tiles'
 default-root-container-orientation = 'horizontal'
 
 [gaps]
-outer.top =        8
-outer.bottom =     8
-outer.left =       4
-outer.right =      4
+outer.top = 8
+outer.bottom = 8
+outer.left = 4
+outer.right = 4
 inner.horizontal = 8
-inner.vertical =   8
+inner.vertical = 8
 
 [mode.main.binding]
-cmd-h = [] # Disable "hide application"
+cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
-alt-semicolon = [
-  'mode service',
-]
+alt-semicolon = ['mode service']
 
 alt-tab = 'workspace-back-and-forth'
 alt-slash = 'layout tiles accordion'
@@ -50,7 +48,10 @@ f1 = 'workspace 1'
 f2 = 'workspace 2'
 f3 = 'workspace 3'
 f4 = 'workspace 4'
-f12 = 'layout floating tiling'
+
+f20 = ['exec-and-forget ~/.config/aerospace/aerospace-preset']
+f19 = ['layout floating tiling']
+f17 = ['workspace --wrap-around next']
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -59,17 +60,12 @@ alt-shift-4 = 'move-node-to-workspace 4'
 alt-shift-s = 'move-node-to-workspace S'
 
 [workspace-to-monitor-force-assignment]
-S = [ 'secondary', 'main' ]
+S = ['secondary', 'main']
 
 [mode.service.binding]
-esc = [
-  'reload-config', 
-  'mode main', 
-]
+esc = ['reload-config', 'mode main']
 
-f = [
-  'layout floating tiling', 
-] 
+f = ['layout floating tiling']
 
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
@@ -110,4 +106,3 @@ run = ['layout floating', 'move-node-to-workspace 3']
 if.app-id = 'com.apple.MobileSMS'
 check-further-callbacks = true
 run = ['layout floating', 'move-node-to-workspace 3']
-

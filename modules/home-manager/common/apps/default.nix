@@ -8,6 +8,7 @@
     ./eza
     ./fastfetch
     ./ghostty
+    ./karabiner
     ./lazygit
     ./nvim
     ./opencode

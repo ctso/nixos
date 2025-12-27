@@ -34,6 +34,7 @@
           "obsidian"
           "chatgpt"
           "discord"
+          "karabiner-elements"
 
           # Fonts
           "font-victor-mono-nerd-font"

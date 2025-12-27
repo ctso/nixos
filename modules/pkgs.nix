@@ -12,7 +12,8 @@
     kubectl
     nodejs_22
     (corepack.override { nodejs = nodejs_22; })
-    php83
+    php82
+    php82Packages.composer
     python314
     ripgrep
     rustup

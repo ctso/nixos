@@ -14,6 +14,7 @@
     (corepack.override { nodejs = nodejs_22; })
     php82
     php82Packages.composer
+    php82Extensions.imagick
     python314
     ripgrep
     rustup

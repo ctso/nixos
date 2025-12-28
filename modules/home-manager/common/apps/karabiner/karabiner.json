@@ -13,6 +13,9 @@
             "manipulators": [
               {
                 "type": "basic",
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 250
+                },
                 "from": {
                   "key_code": "caps_lock",
                   "modifiers": {

@@ -16,6 +16,7 @@
     ripgrep
     rustup
     wget
+    autoconf
   ];
 }
 

@@ -27,11 +27,6 @@ alt-semicolon = ['mode service']
 alt-slash = 'layout tiles accordion'
 alt-comma = 'layout horizontal vertical'
 
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
-
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
@@ -61,6 +56,11 @@ shift-ctrl-alt-cmd-4 = ['workspace 4']
 shift-ctrl-alt-cmd-f = ['layout floating tiling']
 shift-ctrl-alt-cmd-a = ['workspace-back-and-forth']
 shift-ctrl-alt-cmd-n = ['workspace --wrap-around next']
+
+shift-ctrl-alt-cmd-h = 'focus left'
+shift-ctrl-alt-cmd-j = 'focus down'
+shift-ctrl-alt-cmd-k = 'focus up'
+shift-ctrl-alt-cmd-l = 'focus right'
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'

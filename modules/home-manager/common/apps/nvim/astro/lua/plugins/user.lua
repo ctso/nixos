@@ -23,4 +23,7 @@ return {
   {
     "gpanders/editorconfig.nvim",
   },
+  {
+    "adibhanna/yukinord.nvim",
+  },
 }

@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      keybind = "global:alt+backquote=toggle_quick_terminal";
+      keybind = "global:shift+ctrl+alt+cmd+g=toggle_quick_terminal";
 
       shell-integration = "zsh";
       shell-integration-features = "cursor,title,sudo";

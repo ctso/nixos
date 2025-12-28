@@ -14,6 +14,9 @@
       "nikitabobko/tap"
     ];
 
+    brews = [
+    ];
+
     casks =
       builtins.map
         (cask: {

@@ -10,5 +10,9 @@
       name = "zoom";
       greedy = true;
     }
+    {
+      name = "notion";
+      greedy = true;
+    }
   ];
 }

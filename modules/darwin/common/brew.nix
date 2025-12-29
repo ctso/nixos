@@ -38,6 +38,7 @@
           "chatgpt"
           "discord"
           "karabiner-elements"
+          "tableplus"
 
           # Fonts
           "font-victor-mono-nerd-font"

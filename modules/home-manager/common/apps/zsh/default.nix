@@ -25,6 +25,9 @@
       
       # Add ~/.bin to PATH
       export PATH="$HOME/.bin:$PATH"
+
+      # Add Herd bin to PATH
+      export PATH="$HOME/Library/Application Support/Herd/bin:$PATH"
     '';
   };
 }

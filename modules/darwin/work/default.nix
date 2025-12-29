@@ -18,5 +18,9 @@
       name = "twingate";
       greedy = true;
     }
+    {
+      name = "herd";
+      greedy = true;
+    }
   ];
 }

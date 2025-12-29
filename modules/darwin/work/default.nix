@@ -14,5 +14,9 @@
       name = "notion";
       greedy = true;
     }
+    {
+      name = "twingate";
+      greedy = true;
+    }
   ];
 }

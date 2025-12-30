@@ -10,6 +10,16 @@ return {
     opts_extend = { "servers.*.keys" },
     opts = function()
       return {
+        -- global diagnostic settings
+        diagnostics = {
+          virtual_text = true,
+          virtual_lines = false,
+          update_in_insert = false,
+          severity_sort = true,
+          signs = true,
+          underline = true,
+          float = { border = "rounded" },
+        },
         -- default settings for all servers
         servers = {
           ["*"] = {
@@ -34,6 +44,9 @@ return {
       }
     end,
     config = function(_, opts)
+      -- register diagnostic config
+      vim.diagnostic.config(opts.diagnostics)
+
       -- define configs via vim.lsp.config()
       for server, conf in pairs(opts.servers) do
           if server ~= "*" then

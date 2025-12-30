@@ -10,6 +10,9 @@ return {
       enabled = true,
       layout = { preset = "ivy" },
     },
+    statuscolumn = {
+      enabled = true;
+    },
   },
   keys = {
     { "<leader><space>", function() Snacks.picker.smart() end, desc = 'Smart Find Files' },

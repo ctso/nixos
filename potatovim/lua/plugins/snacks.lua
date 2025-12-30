@@ -3,7 +3,11 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    notifier = {
+      enabled = true,
+    },
     picker = {
+      enabled = true,
       layout = { preset = "ivy" },
     },
   },

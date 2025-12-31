@@ -15,6 +15,7 @@
   "noice.nvim": { "branch": "main", "commit": "7bfd942445fb63089b59f97ca487d605e715f155" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-lspconfig": { "branch": "master", "commit": "41ceb6bba3a40128b7841f5b7f5a9dae7201e823" },
+  "nvim-surround": { "branch": "main", "commit": "1098d7b3c34adcfa7feb3289ee434529abd4afd1" },
   "nvim-treesitter": { "branch": "main", "commit": "c6dd314086f7b471bf6c9110092a94ce1c06d220" },
   "nvim-treesitter-textobjects": { "branch": "main", "commit": "ecd03f5811eb5c66d2fa420b79121b866feecd82" },
   "nvim-web-devicons": { "branch": "master", "commit": "6788013bb9cb784e606ada44206b0e755e4323d7" },

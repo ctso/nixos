@@ -20,6 +20,13 @@ return {
 	-- Enhances native comments, more language support, relaxed rules, etc
 	{ "folke/ts-comments.nvim" },
 
+	-- Add/change/delete surrounding pairs
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+		opts = {},
+	},
+
 	-- Better support for editing Neovim configs
 	{
 		"folke/lazydev.nvim",

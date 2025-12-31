@@ -1,16 +1,173 @@
 #!/bin/bash
 
-function getWindowId() {
-    local workspace=$1
-    local appBundleId=$2
+# aerospace-preset: Configure AeroSpace layout based on monitor configuration
+# - Single display: Switch all windows to h_accordion layout
+# - Multi-monitor: Set up specific workspace layouts
 
-    aerospace list-windows --workspace "$workspace" --app-bundle-id "$appBundleId" --format '%{window-id}'
+set -euo pipefail
+
+# =============================================================================
+# Helper Functions
+# =============================================================================
+
+log() {
+    echo "[aerospace-preset] $*"
 }
 
-# Setup Workspace 1
-GHOSTTY_ID=$(getWindowId 1 "com.mitchellh.ghostty")
-HELIUM_ID=$(getWindowId 1 "net.imput.helium")
+get_monitor_count() {
+    aerospace list-monitors --count
+}
 
-aerospace move --window-id $HELIUM_ID left
-aerospace move --window-id $GHOSTTY_ID right
-aerospace resize --window-id $GHOSTTY_ID smart 2064
+get_window_id() {
+    local workspace=$1
+    local app_bundle_id=$2
+    aerospace list-windows --workspace "$workspace" --app-bundle-id "$app_bundle_id" --format '%{window-id}' | head -1
+}
+
+get_all_window_ids() {
+    aerospace list-windows --all --format '%{window-id}'
+}
+
+get_workspace_window_ids() {
+    local workspace=$1
+    aerospace list-windows --workspace "$workspace" --format '%{window-id}'
+}
+
+get_all_workspaces() {
+    aerospace list-workspaces --all
+}
+
+# =============================================================================
+# Single Display Mode
+# =============================================================================
+
+setup_single_display() {
+    log "Single display detected - switching to h_accordion layout"
+
+    # Get all window IDs and switch each to h_accordion
+    local window_ids
+    window_ids=$(get_all_window_ids)
+
+    if [[ -z "$window_ids" ]]; then
+        log "No windows found"
+        return
+    fi
+
+    while IFS= read -r window_id; do
+        if [[ -n "$window_id" ]]; then
+            log "Setting window $window_id to h_accordion"
+            aerospace layout h_accordion --window-id "$window_id" 2>/dev/null || true
+        fi
+    done <<< "$window_ids"
+
+    log "Single display setup complete"
+}
+
+# =============================================================================
+# Multi-Monitor Mode
+# =============================================================================
+
+setup_multi_monitor() {
+    log "Multiple monitors detected - setting up workspace layouts"
+
+    # Setup Workspace 1: Ghostty (right), Helium (left)
+    setup_workspace_1
+
+    # Setup Workspace S: YouTube and Frigate Helium windows
+    setup_workspace_s
+
+    log "Multi-monitor setup complete"
+}
+
+setup_workspace_1() {
+    log "Setting up Workspace 1..."
+
+    local ghostty_id helium_id
+
+    ghostty_id=$(get_window_id 1 "com.mitchellh.ghostty")
+    helium_id=$(get_window_id 1 "net.imput.helium")
+
+    if [[ -z "$ghostty_id" ]] && [[ -z "$helium_id" ]]; then
+        log "Neither Ghostty nor Helium found on Workspace 1, skipping layout"
+        return
+    fi
+
+    # Ensure windows are in tiles layout (not accordion)
+    if [[ -n "$ghostty_id" ]]; then
+        aerospace layout tiles --window-id "$ghostty_id" 2>/dev/null || true
+    fi
+    if [[ -n "$helium_id" ]]; then
+        aerospace layout tiles --window-id "$helium_id" 2>/dev/null || true
+    fi
+
+    # Arrange: Helium left, Ghostty right
+    if [[ -n "$helium_id" ]]; then
+        log "Moving Helium (window $helium_id) to left"
+        aerospace move left --window-id "$helium_id" 2>/dev/null || true
+    fi
+
+    if [[ -n "$ghostty_id" ]]; then
+        log "Moving Ghostty (window $ghostty_id) to right"
+        aerospace move right --window-id "$ghostty_id" 2>/dev/null || true
+
+        # Resize Ghostty
+        log "Resizing Ghostty to 2064"
+        aerospace resize smart 2064 --window-id "$ghostty_id" 2>/dev/null || true
+    fi
+
+    log "Workspace 1 setup complete"
+}
+
+setup_workspace_s() {
+    log "Setting up Workspace S (YouTube/Frigate)..."
+
+    # Get all Helium windows with their titles
+    local helium_windows
+    helium_windows=$(aerospace list-windows --all --app-bundle-id "net.imput.helium" --format '%{window-id}|%{window-title}' 2>/dev/null || true)
+
+    if [[ -z "$helium_windows" ]]; then
+        log "No Helium windows found"
+        return
+    fi
+
+    while IFS= read -r line; do
+        if [[ -z "$line" ]]; then
+            continue
+        fi
+
+        local window_id window_title
+        window_id=$(echo "$line" | cut -d'|' -f1)
+        window_title=$(echo "$line" | cut -d'|' -f2-)
+
+        # Check if title contains YouTube or Frigate (case-insensitive)
+        if echo "$window_title" | grep -qi "youtube\|frigate"; then
+            log "Moving Helium window $window_id ('$window_title') to Workspace S"
+            aerospace move-node-to-workspace S --window-id "$window_id" 2>/dev/null || true
+        fi
+    done <<< "$helium_windows"
+
+    log "Workspace S setup complete"
+}
+
+# =============================================================================
+# Main
+# =============================================================================
+
+main() {
+    log "Starting aerospace-preset..."
+
+    local monitor_count
+    monitor_count=$(get_monitor_count)
+
+    log "Detected $monitor_count monitor(s)"
+
+    if [[ "$monitor_count" -eq 1 ]]; then
+        setup_single_display
+    else
+        setup_multi_monitor
+    fi
+
+    log "Done!"
+}
+
+main "$@"

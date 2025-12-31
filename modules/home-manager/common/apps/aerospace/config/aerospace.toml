@@ -5,7 +5,7 @@ key-mapping.preset = 'qwerty'
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-accordion-padding = 6
+accordion-padding = 8
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'horizontal'
@@ -23,12 +23,12 @@ cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
 shift-ctrl-alt-cmd-semicolon = ['mode service']
-shift-ctrl-alt-cmd-slash = 'layout tiles accordion'
-shift-ctrl-alt-cmd-comma = 'layout horizontal vertical'
 
 shift-ctrl-alt-cmd-1 = ['workspace 1']
 shift-ctrl-alt-cmd-2 = ['workspace 2']
 shift-ctrl-alt-cmd-3 = ['workspace 3']
+shift-ctrl-alt-cmd-h = ['focus left']
+shift-ctrl-alt-cmd-l = ['focus right']
 ctrl-alt-1 = ['move-node-to-workspace 1']
 ctrl-alt-2 = ['move-node-to-workspace 2']
 ctrl-alt-3 = ['move-node-to-workspace 3']
@@ -50,6 +50,9 @@ alt-shift-l = ['join-with right', 'mode main']
 minus = 'resize smart -50'
 equal = 'resize smart +50'
 
+slash = ['layout tiles accordion']
+comma = ['layout horizontal vertical']
+
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'main'
@@ -62,7 +65,13 @@ Z = 'main'
 if.app-id = 'net.imput.helium'
 check-further-callbacks = true
 if.window-title-regex-substring = 'YouTube'
-run = ['move-node-to-workspace L']
+run = ['move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'net.imput.helium'
+check-further-callbacks = true
+if.window-title-regex-substring = 'Frigate'
+run = ['move-node-to-workspace S']
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
@@ -88,3 +97,8 @@ run = ['layout floating']
 if.app-id = 'us.zoom.xos'
 check-further-callbacks = false
 run = ['layout floating', 'move-node-to-workspace Z']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+check-further-callbacks = false
+run = ['layout floating', 'move-node-to-workspace S']

@@ -35,7 +35,6 @@
           "spotify"
           "orbstack"
           "obsidian"
-          "chatgpt"
           "discord"
           "karabiner-elements"
           "tableplus"

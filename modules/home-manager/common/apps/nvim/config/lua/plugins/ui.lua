@@ -125,6 +125,31 @@ return {
 		"lewis6991/gitsigns.nvim",
 	},
 
+	-- statuscol.nvim - custom statuscolumn with fold indicators
+	{
+		"luukvbaal/statuscol.nvim",
+		event = "BufReadPost",
+		config = function()
+			local builtin = require("statuscol.builtin")
+			require("statuscol").setup({
+				relculright = true,
+				ft_ignore = { "snacks_dashboard", "neo-tree", "Outline", "help" },
+				segments = {
+					{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+					{
+						sign = { namespace = { "gitsigns" }, maxwidth = 1, colwidth = 1, auto = false },
+						click = "v:lua.ScSa",
+					},
+					{
+						sign = { namespace = { "diagnostic" }, maxwidth = 1, colwidth = 1, auto = false },
+						click = "v:lua.ScSa",
+					},
+					{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+				},
+			})
+		end,
+	},
+
 	-- trouble.nvim
 	{
 		"folke/trouble.nvim",

@@ -47,8 +47,17 @@ return {
 			-- register diagnostic config
 			vim.diagnostic.config(opts.diagnostics)
 
+			-- Add folding capabilities for nvim-ufo
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			}
+
 			-- define configs via vim.lsp.config()
 			for server, conf in pairs(opts.servers) do
+				-- Merge folding capabilities into each server config
+				conf.capabilities = vim.tbl_deep_extend("force", capabilities, conf.capabilities or {})
 				if server ~= "*" then
 					vim.lsp.config(server, conf)
 				else

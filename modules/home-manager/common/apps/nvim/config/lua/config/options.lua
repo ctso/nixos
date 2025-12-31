@@ -4,17 +4,29 @@ vim.g.maplocalleader = "\\"
 local opt = vim.opt
 opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus" -- Sync with system clipboard
 opt.mouse = "a" -- Enable mouse mode
-opt.number = true -- Show line numbers
+opt.number = true -- Required for statuscol.nvim lnumfunc
 opt.expandtab = true -- Use spaces instead of tabs
 opt.shiftwidth = 2 -- Size of an indent
 opt.tabstop = 2 -- Number of spaces tabs count for
-opt.signcolumn = "yes" -- Always show sign gutter to avoid layout shifts
+opt.signcolumn = "no" -- Handled by statuscol.nvim
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { "en" }
 opt.termguicolors = true
 opt.undofile = true
 opt.undolevels = 10000
 opt.wrap = false
+-- Folding (managed by nvim-ufo)
+opt.foldcolumn = "1"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+opt.fillchars = {
+  eob = " ",
+  fold = " ",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
+}
 
 local map = vim.keymap.set
 map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })

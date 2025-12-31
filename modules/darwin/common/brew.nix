@@ -39,6 +39,7 @@
           "karabiner-elements"
           "tableplus"
           "vlc"
+          "betterdisplay"
 
           # Fonts
           "font-victor-mono-nerd-font"

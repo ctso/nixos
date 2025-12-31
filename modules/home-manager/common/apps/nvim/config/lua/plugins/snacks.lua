@@ -56,5 +56,19 @@ return {
 			end,
 			desc = "Git Branches",
 		},
+		{
+			"<leader>tf",
+			function()
+				Snacks.terminal(nil, { win = { position = "float" } })
+			end,
+			desc = "Floating Terminal",
+		},
+		{
+			"<leader>th",
+			function()
+				Snacks.terminal(nil, { win = { position = "bottom" } })
+			end,
+			desc = "Horizontal Terminal",
+		},
 	},
 }

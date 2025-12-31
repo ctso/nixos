@@ -5,6 +5,7 @@
     ./aerospace
     ./atuin
     ./bat
+    ./git
     ./eza
     ./fastfetch
     ./ghostty

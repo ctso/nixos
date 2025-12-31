@@ -79,13 +79,14 @@ return {
 				},
 				ghost_text = {
 					enabled = true,
+					-- Don't show ghost text when NES is active to avoid duplicate suggestions
+					show_with_menu = true,
 				},
 			},
 
 			sources = {
 				compat = {},
-				-- default = { "lsp", "path", "snippets", "buffer" },
-				default = { "copilot" },
+				default = { "lsp", "path", "snippets", "buffer", "copilot" },
 				providers = {
 					copilot = {
 						name = "copilot",
@@ -93,7 +94,8 @@ return {
 						score_offset = 100,
 						async = true,
 						opts = {
-							max_completions = 3,
+							max_completions = 1, -- Reduce to 1 to avoid clutter with NES
+							max_attempts = 2,
 						},
 					},
 				},
@@ -121,5 +123,14 @@ return {
 				},
 			},
 		},
+		config = function(_, opts)
+			require("blink.cmp").setup(opts)
+
+			-- Setup for blin-copilotp highlight for completion item kinds
+
+			-- Set up better highlight for ghost text (inline completions)
+			-- This makes blink-copilot suggestions more visible
+			vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { fg = "#7aa2f7", italic = true })
+		end,
 	},
 }

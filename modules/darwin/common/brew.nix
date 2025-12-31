@@ -39,6 +39,8 @@
           "discord"
           "karabiner-elements"
           "tableplus"
+          "vlc"
+          "moom"
 
           # Fonts
           "font-victor-mono-nerd-font"

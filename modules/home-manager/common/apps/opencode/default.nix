@@ -13,7 +13,7 @@ let
       # Serena - Semantic code retrieval and editing toolkit
       serena = {
         type = "local";
-        command = [ "uvx" "--from" "git+https://github.com/oraios/serena" "serena" "start-mcp-server" "--context" "ide" ];
+        command = [ "uvx" "--from" "git+https://github.com/oraios/serena" "serena" "start-mcp-server" "--context" "ide" "--enable-web-dashboard" "false" ];
         enabled = true;
         environment = {
           # Add any required environment variables for language servers here

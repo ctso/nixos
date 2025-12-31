@@ -13,4 +13,9 @@ return {
 			folds = { enable = true },
 		},
 	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main",
+		dependencies = { "nvim-treesitter" },
+	},
 }

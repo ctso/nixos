@@ -15,7 +15,6 @@
     ./starship
     ./tmux
     ./zsh
-    ./zellij
     ./mise
     ./k9s
   ];

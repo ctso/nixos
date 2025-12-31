@@ -45,5 +45,12 @@ return {
 			end,
 			desc = "Lazygit",
 		},
+		{
+			"<leader>gb",
+			function()
+				Snacks.picker.git_branches()
+			end,
+			desc = "git branches",
+		},
 	},
 }

@@ -16,6 +16,8 @@
       background-blur = 20;
 
       quick-terminal-position = "center";
+      quick-terminal-size = "75%";
+      quick-terminal-animation-duration = 0;
     };
   } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     package = null;

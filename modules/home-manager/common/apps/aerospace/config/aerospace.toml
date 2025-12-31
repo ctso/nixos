@@ -66,18 +66,18 @@ Z = 'main'
 if.app-id = 'net.imput.helium'
 check-further-callbacks = true
 if.window-title-regex-substring = 'YouTube'
-run = ['move-node-to-workspace S']
+run = ['move-node-to-workspace S', 'layout h_accordion']
 
 [[on-window-detected]]
 if.app-id = 'net.imput.helium'
 check-further-callbacks = true
 if.window-title-regex-substring = 'Frigate'
-run = ['move-node-to-workspace S']
+run = ['move-node-to-workspace S', 'layout h_accordion']
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 check-further-callbacks = true
-run = ['layout floating', 'move-node-to-workspace S']
+run = ['move-node-to-workspace S', 'layout h_accordion']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
@@ -87,7 +87,7 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
 check-further-callbacks = true
-run = ['layout floating', 'move-node-to-workspace S']
+run = ['move-node-to-workspace S', 'layout h_accordion']
 
 [[on-window-detected]]
 if.app-id = 'com.raycast.macos'
@@ -102,4 +102,4 @@ run = ['layout floating', 'move-node-to-workspace Z']
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 check-further-callbacks = false
-run = ['layout floating', 'move-node-to-workspace S']
+run = ['move-node-to-workspace S', 'layout h_accordion']

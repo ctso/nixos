@@ -9,6 +9,14 @@ return {
 		-- merge keymaps per server rather than overwriting them
 		opts_extend = { "servers.*.keys" },
 		opts = function()
+			local icons = require("config.icons").diagnostics
+			local severity_names = { "ERROR", "WARN", "INFO", "HINT" }
+
+			local severity_icons = {}
+			for i, name in ipairs(severity_names) do
+				severity_icons[i] = icons[name]
+			end
+
 			return {
 				-- global diagnostic settings
 				diagnostics = {
@@ -16,18 +24,13 @@ return {
 					virtual_text = {
 						spacing = 4,
 						source = "if_many",
-						prefix = "icons",
+						prefix = function(diagnostic)
+							return severity_icons[diagnostic.severity] or "●"
+						end,
 					},
 					update_in_insert = false,
 					severity_sort = true,
-					signs = {
-						text = {
-							[vim.diagnostic.severity.ERROR] = " ",
-							[vim.diagnostic.severity.WARN] = " ",
-							[vim.diagnostic.severity.HINT] = " ",
-							[vim.diagnostic.severity.INFO] = " ",
-						},
-					},
+					signs = { text = severity_icons },
 				},
 				inlay_hints = {
 					enabled = true,

@@ -27,6 +27,34 @@ return {
             },
           },
           lualine_x = {
+            -- LSP clients
+            {
+              function()
+                local clients = vim.lsp.get_clients({ bufnr = 0 })
+                if #clients == 0 then
+                  return ""
+                end
+                local names = {}
+                for _, client in ipairs(clients) do
+                  table.insert(names, client.name)
+                end
+                return " " .. table.concat(names, ", ")
+              end,
+            },
+            -- Conform formatters
+            {
+              function()
+                local ok, conform = pcall(require, "conform")
+                if not ok then
+                  return ""
+                end
+                local formatters = conform.list_formatters_for_buffer(0)
+                if #formatters == 0 then
+                  return ""
+                end
+                return " " .. table.concat(formatters, ", ")
+              end,
+            },
             {
               "diff",
               symbols = {

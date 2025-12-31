@@ -1,4 +1,5 @@
 return {
+  -- lualine
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
@@ -55,6 +56,8 @@ return {
       };
     end,
   },
+
+  -- mini.icons
   {
     "nvim-mini/mini.icons",
     lazy = true,
@@ -67,4 +70,25 @@ return {
       end
     end,
   },
+
+  -- which-key
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      preset = "modern",
+      spec = {
+        {
+          mode = { "n", "x" },
+          { "<leader>g", group = "git" },
+          { "<leader>f", group = "find" },
+        },
+      },
+    }
+  },
+
+  -- gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+  }
 }

@@ -21,4 +21,8 @@ return {
 			end, { desc = "Toggle Opencode" })
 		end,
 	},
+
+	{
+		"copilotlsp-nvim/copilot-lsp",
+	},
 }

@@ -48,6 +48,13 @@ return {
 				opts = {},
 				version = "*",
 			},
+			{
+				"fang2hou/blink-copilot",
+				options = {
+					max_completions = 1,
+					max_attempts = 2,
+				},
+			},
 		},
 		opts = {
 			snippets = {
@@ -77,12 +84,41 @@ return {
 
 			sources = {
 				compat = {},
-				default = { "lsp", "path", "snippets", "buffer" },
+				-- default = { "lsp", "path", "snippets", "buffer" },
+				default = { "copilot" },
+				providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						score_offset = 100,
+						async = true,
+						opts = {
+							max_completions = 3,
+						},
+					},
+				},
 			},
 
 			keymap = {
-				preset = "enter",
-				["<C-y>"] = { "select_and_accept" },
+				preset = "super-tab",
+				["<Tab>"] = {
+					function(cmp)
+						if vim.b[vim.api.nvim_get_current_buf()].nes_state then
+							cmp.hide()
+							return (
+								require("copilot-lsp.nes").apply_pending_nes()
+								and require("copilot-lsp.nes").walk_cursor_end_edit()
+							)
+						end
+						if cmp.snippet_active() then
+							return cmp.accept()
+						else
+							return cmp.select_and_accept()
+						end
+					end,
+					"snippet_forward",
+					"fallback",
+				},
 			},
 		},
 	},

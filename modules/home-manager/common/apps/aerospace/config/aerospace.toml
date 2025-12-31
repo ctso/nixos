@@ -37,14 +37,6 @@ shift-ctrl-alt-cmd-f = ['layout floating tiling']
 shift-ctrl-alt-cmd-a = ['workspace-back-and-forth']
 shift-ctrl-alt-cmd-space = ['workspace --wrap-around next']
 
-[workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 'main'
-3 = 'main'
-S = ['pm1402', 'main']
-L = ['built-in', 'main']
-Z = 'main'
-
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 
@@ -57,6 +49,14 @@ alt-shift-l = ['join-with right', 'mode main']
 
 minus = 'resize smart -50'
 equal = 'resize smart +50'
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+S = ['pm1402', 'main']
+L = ['built-in', 'main']
+Z = 'main'
 
 [[on-window-detected]]
 if.app-id = 'net.imput.helium'

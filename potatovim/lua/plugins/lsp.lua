@@ -86,7 +86,7 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
 			-- list of LSP servers to install
-			ensure_installed = { "lua_ls", "rust_analyzer" },
+			ensure_installed = { "lua_ls", "rust_analyzer", "copilot" },
 			-- automatically call vim.lsp.enable() for installed servers (default true)
 			automatic_enable = true,
 		},

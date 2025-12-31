@@ -4,24 +4,21 @@ return {
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
+		explorer = { enabled = true },
 		indent = { enabled = true },
-		notifier = { enabled = true },
-		quickfile = { enabled = true },
 		input = { enabled = true },
-		scope = { enabled = true },
-		scroll = { enabled = true },
-		toggle = { enabled = true },
-		words = { enabled = true },
+		notifier = { enabled = true },
 		picker = {
 			enabled = true,
 			layout = { preset = "ivy" },
 		},
-		statuscolumn = {
-			enabled = true,
-		},
-		terminal = {
-			enabled = true,
-		},
+		quickfile = { enabled = true },
+		scope = { enabled = true },
+		scroll = { enabled = true },
+		statuscolumn = { enabled = true },
+		terminal = { enabled = true },
+		toggle = { enabled = true },
+		words = { enabled = true },
 	},
 	keys = {
 		{
@@ -32,11 +29,18 @@ return {
 			desc = "Smart Find Files",
 		},
 		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
+		},
+		{
 			"<leader>fg",
 			function()
 				Snacks.picker.grep()
 			end,
-			desc = "Find with Grep",
+			desc = "Grep",
 		},
 		{
 			"<leader>gg",
@@ -50,7 +54,7 @@ return {
 			function()
 				Snacks.picker.git_branches()
 			end,
-			desc = "git branches",
+			desc = "Git Branches",
 		},
 	},
 }

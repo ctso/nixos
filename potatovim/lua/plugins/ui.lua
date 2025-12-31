@@ -14,7 +14,8 @@ return {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
           lualine_c = {
-            "filename",
+            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            { "filename", padding = { left = 0, right = 1 } },
             {
               "diagnostics",
               symbols = {
@@ -24,7 +25,6 @@ return {
                 hint  = " ",
               },
             },
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           },
           lualine_x = {
             {

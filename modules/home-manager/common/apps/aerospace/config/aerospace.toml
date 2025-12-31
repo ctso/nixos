@@ -43,13 +43,14 @@ esc = ['reload-config', 'mode main']
 
 f = ['layout floating tiling']
 
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
-minus = 'resize smart -50'
-equal = 'resize smart +50'
+h = ['move left']
+j = ['move down']
+k = ['move up']
+l = ['move right']
+shift-h = ['join-with left']
+shift-j = ['join-with down']
+shift-k = ['join-with up']
+shift-l = ['join-with right']
 
 slash = ['layout tiles accordion']
 comma = ['layout horizontal vertical']

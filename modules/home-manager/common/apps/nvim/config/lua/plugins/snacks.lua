@@ -16,7 +16,49 @@ return {
 		scope = { enabled = true },
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
-		terminal = { enabled = true },
+		terminal = {
+			enabled = true,
+			win = {
+				keys = {
+					nav_h = {
+						"<c-h>",
+						function()
+							vim.cmd("stopinsert")
+							vim.cmd("TmuxNavigateLeft")
+						end,
+						desc = "Navigate Left",
+						mode = "t",
+					},
+					nav_j = {
+						"<c-j>",
+						function()
+							vim.cmd("stopinsert")
+							vim.cmd("TmuxNavigateDown")
+						end,
+						desc = "Navigate Down",
+						mode = "t",
+					},
+					nav_k = {
+						"<c-k>",
+						function()
+							vim.cmd("stopinsert")
+							vim.cmd("TmuxNavigateUp")
+						end,
+						desc = "Navigate Up",
+						mode = "t",
+					},
+					nav_l = {
+						"<c-l>",
+						function()
+							vim.cmd("stopinsert")
+							vim.cmd("TmuxNavigateRight")
+						end,
+						desc = "Navigate Right",
+						mode = "t",
+					},
+				},
+			},
+		},
 		toggle = { enabled = true },
 		words = { enabled = true },
 	},

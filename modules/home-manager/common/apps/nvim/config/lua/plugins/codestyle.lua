@@ -11,6 +11,14 @@ return {
 			notify_no_formatters = true,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				php = { "php_cs_fixer" },
+			},
+			formatters = {
+				php_cs_fixer = {
+					command = "vendor/bin/php-cs-fixer",
+					args = { "fix", "$FILENAME" },
+					stdin = false,
+				},
 			},
 		},
 	},

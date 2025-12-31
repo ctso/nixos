@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ util, config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -10,29 +10,7 @@
     opencode
   ];
 
-  home.file.".config/nvim" = {
-    source = ./astro;
-    recursive = true;
-  };
-
-  programs.nixvim = {
-    enable = true;
-
-    viAlias = true;
-    vimAlias = true;
-
-    globals = {
-      mapleader = " ";
-      maplocalleader = " ";
-    };
-
-    extraPlugins = with pkgs.vimPlugins; [
-      astrocore
-      astrotheme
-      astroui
-      astrolsp
-      mason-nvim-dap-nvim
-      mason-null-ls-nvim
-    ];
-  };
+  # Symlink config directly to ~/.config/nvim (out-of-store)
+  # This allows iterating on the vim config without rebuilding
+  home.file = util.linkSharedApp config "nvim";
 }

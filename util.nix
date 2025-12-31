@@ -1,12 +1,14 @@
 {
   hostname,
   lib,
-  flakeRoot ? null,
+  # Hardcoded path to the repo checkout for out-of-store symlinks
+  # This allows editing configs without rebuilding nix
+  repoPath ? "/Users/ctso/src/nixos",
 }:
 
 let
-  absoluteHomeManagerPath = if flakeRoot != null then "${flakeRoot}/home-manager" else "/etc/nixos/home-manager";
-  absoluteModulesPath = if flakeRoot != null then "${flakeRoot}/modules" else "/etc/nixos/modules";
+  absoluteHomeManagerPath = "${repoPath}/home-manager";
+  absoluteModulesPath = "${repoPath}/modules";
 
   linkSharedApp =
     config: app:

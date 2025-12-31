@@ -76,7 +76,6 @@
         import ./util.nix {
           hostname = hostname;
           lib = nixpkgs.lib;
-          flakeRoot = self.outPath;
         };
 
       createNixOS =

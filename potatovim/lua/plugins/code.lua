@@ -1,4 +1,5 @@
 return {
+  -- automatically add matching pairs, ie () [] ""
   {
     "nvim-mini/mini.pairs",
     event = "VeryLazy",
@@ -13,6 +14,22 @@ return {
       skip_unbalanced = true,
       -- better support for markdown
       markdown = true,
+    },
+  },
+
+  -- Enhances native comments, more language support, relaxed rules, etc
+  { "folke/ts-comments.nvim" },
+
+  -- Better support for editing Neovim configs
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    cmd = "LazyDev",
+    opts = {
+      library = {
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        { path = "snacks.nvim", words = { "Snacks" } },
+      },
     },
   },
 }

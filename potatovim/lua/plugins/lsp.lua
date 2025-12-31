@@ -12,13 +12,25 @@ return {
 			return {
 				-- global diagnostic settings
 				diagnostics = {
-					virtual_text = true,
-					virtual_lines = false,
+					underline = true,
+					virtual_text = {
+						spacing = 4,
+						source = "if_many",
+						prefix = "icons",
+					},
 					update_in_insert = false,
 					severity_sort = true,
-					signs = true,
-					underline = true,
-					float = { border = "rounded" },
+					signs = {
+						text = {
+							[vim.diagnostic.severity.ERROR] = " ",
+							[vim.diagnostic.severity.WARN] = " ",
+							[vim.diagnostic.severity.HINT] = " ",
+							[vim.diagnostic.severity.INFO] = " ",
+						},
+					},
+				},
+				inlay_hints = {
+					enabled = true,
 				},
 				-- default settings for all servers
 				servers = {
@@ -26,18 +38,6 @@ return {
 						keys = {
 							{ "gd", vim.lsp.buf.definition, desc = "Goto definition" },
 							{ "gr", vim.lsp.buf.references, desc = "References" },
-						},
-					},
-					-- per‑server settings (example)
-					lua_ls = {
-						settings = {
-							Lua = {
-								runtime = { version = "LuaJIT" },
-								diagnostics = { globals = { "vim" } },
-							},
-						},
-						keys = {
-							{ "<leader>cl", vim.lsp.codelens.run, desc = "Run code lens" },
 						},
 					},
 				},

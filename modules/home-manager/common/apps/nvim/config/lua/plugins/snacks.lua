@@ -112,5 +112,12 @@ return {
 			end,
 			desc = "Horizontal Terminal",
 		},
+		{
+			"<leader>r",
+			function()
+				Snacks.picker.recent()
+			end,
+			desc = "Recent Files",
+		},
 	},
 }

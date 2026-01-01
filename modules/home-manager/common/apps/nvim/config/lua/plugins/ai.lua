@@ -25,20 +25,12 @@ return {
 	{
 		"copilotlsp-nvim/copilot-lsp",
 		init = function()
+			-- NES disabled - only using blink.cmp integration
 			vim.g.copilot_nes_debounce = 500
 			vim.lsp.enable("copilot_ls")
-
-			-- Clear copilot suggestion with Esc if visible
-			vim.keymap.set("n", "<esc>", function()
-				if not require("copilot-lsp.nes").clear() then
-					-- fallback: clear search highlight
-					vim.cmd("nohlsearch")
-				end
-			end, { desc = "Clear Copilot NES or search highlight" })
 		end,
-		config = function()
-			vim.api.nvim_set_hl(0, "CopilotNesHint", { fg = "#7aa2f7", italic = true })
-			vim.api.nvim_set_hl(0, "CopilotNesDiff", { fg = "#9ece6a", bg = "#1a1b26" })
-		end,
+		opts = {
+			nes = { enabled = false },
+		},
 	},
 }

@@ -38,3 +38,10 @@ map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Move to left window" })
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Move to bottom window" })
 map("t", "<C-k>", "<C-\\><C-N><C-w>k", { desc = "Move to top window" })
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Move to right window" })
+
+-- Buffer management
+map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<leader>bb", "<cmd>e #<CR>", { desc = "Switch to other buffer" })
+map("n", "<leader>`", "<cmd>e #<CR>", { desc = "Switch to other buffer" })
+map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })

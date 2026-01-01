@@ -15,17 +15,18 @@ opt.termguicolors = true
 opt.undofile = true
 opt.undolevels = 10000
 opt.wrap = false
--- Folding (managed by nvim-ufo)
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldmethod = "expr"
 opt.foldcolumn = "1"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
 opt.fillchars = {
-  eob = " ",
-  fold = " ",
-  foldopen = "▾",
-  foldsep = "│",
-  foldclose = "▸",
+	eob = " ",
+	fold = " ",
+	foldopen = "▾",
+	foldsep = "│",
+	foldclose = "▸",
 }
 
 local map = vim.keymap.set

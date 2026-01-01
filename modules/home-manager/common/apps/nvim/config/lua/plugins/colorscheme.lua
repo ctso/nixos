@@ -6,6 +6,7 @@ return {
 		name = "catppuccin",
 		opts = {
 			flavour = "mocha",
+			transparent_background = true,
 			lsp_styles = {
 				underlines = {
 					errors = { "undercurl" },
@@ -43,6 +44,9 @@ return {
 		},
 		config = function()
 			vim.cmd("colorscheme catppuccin")
+			-- Make background transparent
+			vim.cmd.highlight({ "Normal", "guibg=NONE", "ctermbg=NONE" })
+			vim.cmd.highlight({ "NormalFloat", "guibg=NONE", "ctermbg=NONE" })
 		end,
 		specs = {
 			{

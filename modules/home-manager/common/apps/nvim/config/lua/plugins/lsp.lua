@@ -77,7 +77,13 @@ return {
 		build = ":MasonUpdate",
 		opts_extend = { "ensure_installed" },
 		opts = {
-			ensure_installed = { "stylua", "shfmt" }, -- list any tools you want Mason to install
+			-- tools (linters, formatters) to install
+			-- LSPs should be installed via mason-lspconfig
+			ensure_installed = {
+				"stylua",
+				"shfmt",
+				"phpstan",
+			},
 		},
 		config = function(_, opts)
 			require("mason").setup()
@@ -98,7 +104,12 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
 			-- list of LSP servers to install
-			ensure_installed = { "lua_ls", "rust_analyzer", "copilot" },
+			ensure_installed = {
+				"lua_ls",
+				"rust_analyzer",
+				"copilot",
+				"intelephense",
+			},
 			-- automatically call vim.lsp.enable() for installed servers (default true)
 			automatic_enable = true,
 		},

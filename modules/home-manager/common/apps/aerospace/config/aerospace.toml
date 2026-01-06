@@ -39,6 +39,7 @@ shift-ctrl-alt-cmd-f = ['layout floating tiling']
 shift-ctrl-alt-cmd-a = ['workspace-back-and-forth']
 shift-ctrl-alt-cmd-space = ['workspace --wrap-around next']
 shift-ctrl-alt-cmd-r = ['exec-and-forget /Users/ctso/.config/aerospace/aerospace-preset']
+shift-ctrl-alt-cmd-c = ['exec-and-forget /Users/ctso/.config/aerospace/aerospace-float-center']
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
@@ -100,7 +101,7 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
 check-further-callbacks = false
-run = ['layout floating', 'move-node-to-workspace Z']
+run = ['layout floating', 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'

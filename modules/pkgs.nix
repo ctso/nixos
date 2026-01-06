@@ -26,6 +26,7 @@ in
     ripgrep
     rustup
     wget
+    awscli2
   ];
 }
 

@@ -5,7 +5,10 @@
     enable = true;
 
     settings = {
-      keybind = "global:shift+ctrl+alt+cmd+g=toggle_quick_terminal";
+      keybind = [
+        "global:shift+ctrl+alt+cmd+g=toggle_quick_terminal"
+        "shift+enter=text:\\n"
+      ];
 
       shell-integration = "zsh";
       shell-integration-features = "cursor,title,sudo";

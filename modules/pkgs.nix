@@ -27,6 +27,7 @@ in
     rustup
     wget
     awscli2
+    claude-code
   ];
 }
 

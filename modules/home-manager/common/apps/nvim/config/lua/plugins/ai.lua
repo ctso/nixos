@@ -36,7 +36,15 @@ return {
 
 	{
 		"coder/claudecode.nvim",
-		opts = {},
+		opts = {
+			diff_opts = {
+				default_bindings = false,
+				auto_close_on_accept = true,
+			},
+			terminal = {
+				default_mode = "acceptEdits",
+			},
+		},
 		keys = {
 			{ "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
 			{ "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },

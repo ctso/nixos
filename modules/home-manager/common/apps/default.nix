@@ -5,6 +5,7 @@
     ./aerospace
     ./atuin
     ./bat
+    ./claude-code
     ./git
     ./eza
     ./fastfetch

@@ -41,9 +41,6 @@ return {
 				default_bindings = false,
 				auto_close_on_accept = true,
 			},
-			terminal = {
-				default_mode = "acceptEdits",
-			},
 		},
 		keys = {
 			{ "<leader>a", "", desc = "+ai", mode = { "n", "v" } },

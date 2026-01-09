@@ -25,8 +25,6 @@ return {
 	{
 		"copilotlsp-nvim/copilot-lsp",
 		init = function()
-			-- NES disabled - only using blink.cmp integration
-			vim.g.copilot_nes_debounce = 500
 			vim.lsp.enable("copilot_ls")
 		end,
 		opts = {

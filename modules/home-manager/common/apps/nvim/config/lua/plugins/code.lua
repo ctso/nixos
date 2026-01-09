@@ -86,8 +86,6 @@ return {
 				},
 				ghost_text = {
 					enabled = true,
-					-- Don't show ghost text when NES is active to avoid duplicate suggestions
-					show_with_menu = true,
 				},
 			},
 
@@ -101,7 +99,7 @@ return {
 						score_offset = 100,
 						async = true,
 						opts = {
-							max_completions = 1, -- Reduce to 1 to avoid clutter with NES
+							max_completions = 1,
 							max_attempts = 2,
 						},
 					},
@@ -110,24 +108,6 @@ return {
 
 			keymap = {
 				preset = "super-tab",
-				["<Tab>"] = {
-					function(cmp)
-						if vim.b[vim.api.nvim_get_current_buf()].nes_state then
-							cmp.hide()
-							return (
-								require("copilot-lsp.nes").apply_pending_nes()
-								and require("copilot-lsp.nes").walk_cursor_end_edit()
-							)
-						end
-						if cmp.snippet_active() then
-							return cmp.accept()
-						else
-							return cmp.select_and_accept()
-						end
-					end,
-					"snippet_forward",
-					"fallback",
-				},
 			},
 		},
 		config = function(_, opts)

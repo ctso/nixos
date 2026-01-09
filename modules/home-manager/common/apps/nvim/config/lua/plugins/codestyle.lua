@@ -12,8 +12,9 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				php = { "php_cs_fixer" },
-				json = { "prettierd" },
+				json = { "prettier" },
 				terraform = { "terraform_fmt" },
+				go = { "goimports", "gofmt" },
 			},
 			formatters = {
 				php_cs_fixer = {

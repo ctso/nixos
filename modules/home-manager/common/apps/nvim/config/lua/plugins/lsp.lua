@@ -74,7 +74,8 @@ return {
 				"shfmt",
 				"phpstan",
 				"terraform",
-				"prettierd",
+				"prettier",
+				"goimports",
 			},
 		},
 		config = function(_, opts)
@@ -103,6 +104,7 @@ return {
 				"intelephense",
 				"terraformls",
 				"jsonls",
+				"gopls",
 			},
 			-- automatically call vim.lsp.enable() for installed servers (default true)
 			automatic_enable = true,

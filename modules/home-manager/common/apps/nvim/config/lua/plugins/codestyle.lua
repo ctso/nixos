@@ -12,6 +12,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				php = { "php_cs_fixer" },
+				json = { "prettierd" },
 				terraform = { "terraform_fmt" },
 			},
 			formatters = {

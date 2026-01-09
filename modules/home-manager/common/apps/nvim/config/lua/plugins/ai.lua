@@ -23,12 +23,16 @@ return {
 	},
 
 	{
-		"copilotlsp-nvim/copilot-lsp",
-		init = function()
-			vim.lsp.enable("copilot_ls")
-		end,
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
 		opts = {
-			nes = { enabled = false },
+			suggestion = { enabled = false },
+			panel = { enabled = false },
+			filetypes = {
+				markdown = true,
+				help = true,
+			},
 		},
 	},
 

@@ -12,21 +12,22 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    (corepack.override { nodejs = nodejs_22; })
+    awscli2
+    composer
     fzf
     git
     go
     jq
     just
     kubectl
+    kubectx
     nodejs_22
-    (corepack.override { nodejs = nodejs_22; })
     php
-    composer
     python314
     ripgrep
     rustup
     wget
-    awscli2
   ];
 }
 

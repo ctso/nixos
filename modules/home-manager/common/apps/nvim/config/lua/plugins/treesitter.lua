@@ -37,6 +37,7 @@ return {
 				"vimdoc",
 				"yaml",
 				"php",
+				"proto",
 			})
 
 			-- Enable treesitter highlighting for all filetypes

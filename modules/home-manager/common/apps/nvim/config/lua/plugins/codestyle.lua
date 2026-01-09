@@ -15,6 +15,7 @@ return {
 				json = { "prettier" },
 				terraform = { "terraform_fmt" },
 				go = { "goimports", "gofmt" },
+				proto = { "buf" },
 			},
 			formatters = {
 				php_cs_fixer = {

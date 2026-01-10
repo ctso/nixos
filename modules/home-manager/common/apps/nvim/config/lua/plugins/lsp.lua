@@ -1,3 +1,42 @@
+-- Detect Helm files by checking for Chart.yaml in parent directories
+local function is_helm_file(path)
+	local check = vim.fs.find("Chart.yaml", { path = vim.fs.dirname(path), upward = true })
+	return not vim.tbl_isempty(check)
+end
+
+vim.filetype.add({
+	extension = {
+		gotmpl = "helm",
+		tpl = function(path)
+			return is_helm_file(path) and "helm" or "smarty"
+		end,
+	},
+	filename = {
+		["Chart.yaml"] = "yaml",
+		["Chart.lock"] = "yaml",
+	},
+	pattern = {
+		["helmfile.*%.ya?ml"] = "helm",
+		[".*/templates/.*%.yaml"] = function(path)
+			return is_helm_file(path) and "helm" or "yaml"
+		end,
+		[".*/templates/.*%.yml"] = function(path)
+			return is_helm_file(path) and "helm" or "yaml"
+		end,
+		[".*/templates/.*%.tpl"] = function(path)
+			return is_helm_file(path) and "helm" or nil
+		end,
+	},
+})
+
+-- Set correct comment string for Helm files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "helm",
+	callback = function()
+		vim.opt_local.commentstring = "{{/* %s */}}"
+	end,
+})
+
 return {
 	-- nvim-lspconfig
 	{
@@ -107,6 +146,7 @@ return {
 				"jsonls",
 				"gopls",
 				"buf_ls",
+				"helm_ls",
 			},
 			-- automatically call vim.lsp.enable() for installed servers (default true)
 			automatic_enable = true,

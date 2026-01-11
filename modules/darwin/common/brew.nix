@@ -40,6 +40,9 @@
           "tableplus"
           "vlc"
           "betterdisplay"
+          "visual-studio-code"
+          "coder-desktop"
+          "coder"
 
           # Fonts
           "font-victor-mono-nerd-font"

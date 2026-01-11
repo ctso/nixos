@@ -12,6 +12,7 @@
 
     taps = [
       "nikitabobko/tap"
+      "coder/coder"
     ];
 
     brews = [
@@ -42,7 +43,6 @@
           "betterdisplay"
           "visual-studio-code"
           "coder-desktop"
-          "coder"
 
           # Fonts
           "font-victor-mono-nerd-font"

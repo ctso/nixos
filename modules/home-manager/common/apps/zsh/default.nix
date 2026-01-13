@@ -20,9 +20,12 @@
       lt = "eza --tree --level=2 --icons";
     };
     initContent = ''
+      # Set default editor
+      export EDITOR="vim"
+
       # Add local node_modules/.bin to PATH
       export PATH="./node_modules/.bin:$PATH"
-      
+
       # Add ~/.bin to PATH
       export PATH="$HOME/.bin:$PATH"
 

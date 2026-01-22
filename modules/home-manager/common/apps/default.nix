@@ -10,6 +10,7 @@
     ./eza
     ./fastfetch
     ./ghostty
+    ./hammerspoon
     ./karabiner
     ./lazygit
     ./nvim

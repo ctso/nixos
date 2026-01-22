@@ -43,6 +43,7 @@
           "betterdisplay"
           "visual-studio-code"
           "coder-desktop"
+          "hammerspoon"
 
           # Fonts
           "font-victor-mono-nerd-font"

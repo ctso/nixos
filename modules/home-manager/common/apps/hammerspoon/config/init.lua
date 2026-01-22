@@ -48,6 +48,7 @@ PaperWM:bindHotkeys({
 	decrease_width = { hyper, "-" },
 
 	cycle_width = { hyper, "r" },
+	reverse_cycle_width = { hyper, "e" },
 
 	-- Add/remove column
 	slurp_in = { { "alt" }, "i" },

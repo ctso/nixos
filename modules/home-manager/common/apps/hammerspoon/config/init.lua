@@ -6,54 +6,56 @@ local hyper = { "shift", "cmd", "alt", "ctrl" }
 hs.loadSpoon("SpoonInstall")
 spoon.SpoonInstall.use_syncinstall = true
 
--- Install PaperWM from GitHub archive if not already installed
-local paperwm_path = hs.spoons.resourcePath("PaperWM")
-if not paperwm_path then
-	spoon.SpoonInstall:installSpoonFromZipURL("https://github.com/mogenson/PaperWM.spoon/archive/refs/heads/main.zip")
-	-- Rename the extracted folder to match expected Spoon name
-	local spoons_dir = os.getenv("HOME") .. "/.hammerspoon/Spoons"
-	os.rename(spoons_dir .. "/PaperWM.spoon-main", spoons_dir .. "/PaperWM.spoon")
-end
+-- Register PaperWM custom repository
+spoon.SpoonInstall.repos.PaperWM = {
+	url = "https://github.com/mogenson/PaperWM.spoon",
+	desc = "PaperWM.spoon repository",
+	branch = "release",
+}
 
--- Load and configure PaperWM
-PaperWM = hs.loadSpoon("PaperWM")
-PaperWM.window_ratios = { 1 / 3, 1 / 2, 2 / 3, 1 }
-PaperWM.drag_window = { "shift", "ctrl", "alt" }
-PaperWM.lift_window = { "ctrl", "alt" }
-PaperWM:bindHotkeys({
-	-- Switch to left/right/up/down window
-	focus_left = { hyper, "h" },
-	focus_right = { hyper, "l" },
-	focus_up = { hyper, "k" },
-	focus_down = { hyper, "j" },
+-- Install and configure PaperWM using SpoonInstall's andUse method
+spoon.SpoonInstall:andUse("PaperWM", {
+	repo = "PaperWM",
+	config = {
+		window_ratios = { 1 / 3, 1 / 2, 2 / 3, 1 },
+		drag_window = { "shift", "ctrl", "alt" },
+		lift_window = { "ctrl", "alt" },
+	},
+	hotkeys = {
+		-- Switch to left/right/up/down window
+		focus_left = { hyper, "h" },
+		focus_right = { hyper, "l" },
+		focus_up = { hyper, "k" },
+		focus_down = { hyper, "j" },
 
-	-- Move current window to left/right/up/down
-	swap_left = { { "alt", "shift" }, "h" },
-	swap_right = { { "alt", "shift" }, "l" },
-	swap_up = { { "alt", "shift" }, "k" },
-	swap_down = { { "alt", "shift" }, "j" },
+		-- Move current window to left/right/up/down
+		swap_left = { { "alt", "shift" }, "h" },
+		swap_right = { { "alt", "shift" }, "l" },
+		swap_up = { { "alt", "shift" }, "k" },
+		swap_down = { { "alt", "shift" }, "j" },
 
-	center_window = { hyper, "c" },
-	toggle_floating = { hyper, "f" },
+		center_window = { hyper, "c" },
+		toggle_floating = { hyper, "f" },
 
-	switch_space_1 = { hyper, "1" },
-	switch_space_2 = { hyper, "2" },
-	switch_space_3 = { hyper, "3" },
-	move_window_1 = { { "alt", "shift" }, "1" },
-	move_window_2 = { { "alt", "shift" }, "2" },
-	move_window_3 = { { "alt", "shift" }, "3" },
+		switch_space_1 = { hyper, "1" },
+		switch_space_2 = { hyper, "2" },
+		switch_space_3 = { hyper, "3" },
+		move_window_1 = { { "alt", "shift" }, "1" },
+		move_window_2 = { { "alt", "shift" }, "2" },
+		move_window_3 = { { "alt", "shift" }, "3" },
 
-	increase_width = { hyper, "=" },
-	decrease_width = { hyper, "-" },
+		increase_width = { hyper, "=" },
+		decrease_width = { hyper, "-" },
 
-	cycle_width = { hyper, "r" },
-	reverse_cycle_width = { hyper, "e" },
+		cycle_width = { hyper, "r" },
+		reverse_cycle_width = { hyper, "e" },
 
-	-- Add/remove column
-	slurp_in = { { "alt" }, "i" },
-	barf_out = { { "alt" }, "o" },
+		-- Add/remove column
+		slurp_in = { { "alt" }, "i" },
+		barf_out = { { "alt" }, "o" },
 
-	-- Refresh window layout
-	refresh_windows = { { "alt" }, "r" },
+		-- Refresh window layout
+		refresh_windows = { { "alt" }, "r" },
+	},
+	start = true,
 })
-PaperWM:start()

@@ -17,7 +17,6 @@ end
 
 -- Load and configure PaperWM
 PaperWM = hs.loadSpoon("PaperWM")
-PaperWM.window_filter:setScreens({ "DELL U4025QW" })
 PaperWM.window_ratios = { 1 / 3, 1 / 2, 2 / 3, 1 }
 PaperWM.drag_window = { "shift", "ctrl", "alt" }
 PaperWM.lift_window = { "ctrl", "alt" }

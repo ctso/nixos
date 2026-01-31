@@ -45,6 +45,7 @@
           "coder-desktop"
           "hammerspoon"
           "linear-linear"
+          "lm-studio"
 
           # Fonts
           "font-victor-mono-nerd-font"

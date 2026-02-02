@@ -16,6 +16,7 @@ in
     awscli2
     composer
     fzf
+    gh
     git
     go
     jq

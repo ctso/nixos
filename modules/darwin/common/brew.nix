@@ -16,6 +16,7 @@
     ];
 
     brews = [
+      "mole"
     ];
 
     casks =
@@ -46,7 +47,9 @@
           "hammerspoon"
           "linear-linear"
           "lm-studio"
+          "conductor"
           "chatgpt"
+          "loom"
 
           # Fonts
           "font-victor-mono-nerd-font"

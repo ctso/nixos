@@ -46,6 +46,7 @@
           "hammerspoon"
           "linear-linear"
           "lm-studio"
+          "chatgpt"
 
           # Fonts
           "font-victor-mono-nerd-font"

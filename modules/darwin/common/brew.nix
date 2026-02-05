@@ -50,6 +50,7 @@
           "conductor"
           "chatgpt"
           "loom"
+          "granola"
 
           # Fonts
           "font-victor-mono-nerd-font"

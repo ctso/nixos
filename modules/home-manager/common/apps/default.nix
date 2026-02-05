@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./aerospace
     ./atuin
     ./bat
     ./claude-code

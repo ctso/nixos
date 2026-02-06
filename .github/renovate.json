@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "nix": {
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 4am on monday"]
+  },
+  "packageRules": [
+    {
+      "description": "Group nix flake input updates together",
+      "matchManagers": ["nix"],
+      "groupName": "nix flake inputs"
+    }
+  ],
+  "timezone": "America/Los_Angeles"
+}

@@ -50,6 +50,9 @@
       url = "github:sadjow/claude-code-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    workmux = {
+      url = "github:raine/workmux";
+    };
   };
 
   outputs =

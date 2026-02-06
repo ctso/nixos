@@ -19,5 +19,6 @@
     ./zsh
     ./mise
     ./k9s
+    ./workmux
   ];
 }

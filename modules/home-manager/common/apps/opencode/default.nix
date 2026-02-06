@@ -3,6 +3,18 @@
 let
   opencode-config = {
     "$schema" = "https://opencode.ai/config.json";
+    provider = {
+      litellm = {
+        npm = "@ai-sdk/openai-compatible";
+        name = "LiteLLM";
+        options = {
+          baseURL = "https://litellm.c9s.io/v1";
+        };
+        models = {
+          koushai = { name = "KoushAI"; };
+        };
+      };
+    };
     mcp = {
       # GitHub Grep for code search
       gh_grep = {

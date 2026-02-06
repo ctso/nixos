@@ -26,6 +26,9 @@ in
     package = inputs.claude-code.packages.${pkgs.system}.default;
 
     settings = {
+      env = {
+        CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1";
+      };
       terminal = {
         default_mode = "acceptEdits";
       };

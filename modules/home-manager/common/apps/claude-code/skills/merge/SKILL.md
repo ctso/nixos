@@ -17,7 +17,7 @@ This command finishes work on the current branch by:
 
 ## Step 1: Commit
 
-If there are staged changes, commit them. Use lowercase, imperative mood, no conventional commit prefixes. Skip if nothing is staged.
+If there are staged changes, commit them. First run `git log --format="%s" -n 20` to detect the repo's commit message convention and match it. If no clear convention exists, default to conventional commits with a scope, e.g. `feat(auth): add login endpoint`. Skip if nothing is staged.
 
 ## Step 2: Rebase
 

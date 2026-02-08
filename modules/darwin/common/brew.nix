@@ -51,6 +51,7 @@
           "chatgpt"
           "loom"
           "granola"
+          "claude"
 
           # Fonts
           "font-victor-mono-nerd-font"

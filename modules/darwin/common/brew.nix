@@ -52,6 +52,7 @@
           "loom"
           "granola"
           "claude"
+          "superhuman"
 
           # Fonts
           "font-victor-mono-nerd-font"

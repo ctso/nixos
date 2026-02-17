@@ -17,7 +17,7 @@ spoon.SpoonInstall.repos.PaperWM = {
 spoon.SpoonInstall:andUse("PaperWM", {
 	repo = "PaperWM",
 	config = {
-		window_ratios = { 1 / 3, 1 / 2, 2 / 3, 1 },
+		window_ratios = { 1 / 4, 1 / 3, 1 / 2, 2 / 3, 3 / 4, 1 },
 		drag_window = { "shift", "ctrl", "alt" },
 		lift_window = { "ctrl", "alt" },
 	},

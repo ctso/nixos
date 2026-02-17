@@ -11,6 +11,11 @@
     post_create:
       - mise trust
 
+    files:
+      symlink:
+        - node_modules
+        - .pnpm-store
+
     dashboard:
       merge: "/pr"
   '';

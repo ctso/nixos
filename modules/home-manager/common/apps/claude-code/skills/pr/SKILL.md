@@ -63,13 +63,13 @@ If a template exists, read it and use it as the basis for the PR body — fill i
 **Always prefix the PR body with this notice:**
 
 ```
-> ✨🤖 This pull request and its contents may have been authored by AI.
+✨🤖 This pull request was co-authored by Claude Code.
 ```
 
 If a PR template was found in Step 2, fill it in below the AI notice. Otherwise, use this default template:
 
 ```markdown
-> ✨🤖 This pull request and its contents may have been authored by AI.
+✨🤖 This pull request was co-authored by Claude Code.
 
 ## Summary
 

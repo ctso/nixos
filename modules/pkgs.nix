@@ -12,7 +12,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    (corepack.override { nodejs = nodejs_22; })
+    corepack
     awscli2
     composer
     fzf

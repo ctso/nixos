@@ -3,7 +3,7 @@
 hostname := `hostname -s`
 
 # Rebuild and switch to the darwin configuration
-default:
+default: update
     sudo darwin-rebuild switch --flake .#{{hostname}}
 
 # Rebuild and switch (alias for default)

@@ -4,6 +4,7 @@ let
   repoPath = "/Users/ctso/src/nixos";
   skillsPath = "${repoPath}/modules/home-manager/common/apps/claude-code/skills";
   skills = [
+    "merge"
     "pr"
     "worktree"
     "rebase"

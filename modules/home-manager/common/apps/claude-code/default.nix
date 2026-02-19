@@ -33,7 +33,30 @@ in
         default_mode = "acceptEdits";
       };
       permissions = {
-        allow = [ "WebSearch" ];
+        allow = [
+          "WebSearch"
+          "Bash(gh pr view:*)"
+          "Bash(gh pr list:*)"
+          "Bash(gh pr diff:*)"
+          "Bash(gh pr checks:*)"
+          "Bash(gh issue view:*)"
+          "Bash(gh issue list:*)"
+          "Bash(ls:*)"
+          "Bash(wc:*)"
+          "Bash(test:*)"
+          "Bash(grep:*)"
+        ];
+        deny = [
+          "Bash(rm -rf:*)"
+          "Bash(rm -r:*)"
+          "Bash(git push --force:*)"
+          "Bash(git push -f:*)"
+          "Bash(git reset --hard:*)"
+          "Bash(git checkout .:*)"
+          "Bash(git checkout -- .:*)"
+          "Bash(git clean:*)"
+          "Bash(git branch -D:*)"
+        ];
       };
       hooks = {
         UserPromptSubmit = [

@@ -28,7 +28,8 @@ in
     settings.aqua.github_attestations = false;
   };
 
-  home.packages = buildTools ++ buildLibs;
+  # Exclude ncurses from packages to avoid terminfo conflict with ghostty
+  home.packages = buildTools ++ (lib.remove pkgs.ncurses buildLibs);
 
   home.sessionVariables = {
     C_INCLUDE_PATH = lib.makeSearchPathOutput "dev" "include" buildLibs;

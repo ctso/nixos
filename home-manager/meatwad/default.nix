@@ -1,0 +1,7 @@
+{ hmModules, ... }:
+
+{
+  imports = [
+    hmModules.common
+  ];
+}

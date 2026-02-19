@@ -200,7 +200,7 @@
       };
 
       nixosConfigurations = builtins.listToAttrs [
-      #  (createNixOS "meatwad")
+        (createNixOS "meatwad")
       ];
 
       darwinConfigurations = builtins.listToAttrs [

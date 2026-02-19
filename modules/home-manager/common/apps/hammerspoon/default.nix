@@ -1,9 +1,9 @@
-{ util, config, pkgs, ... }:
+{ util, config, lib, pkgs, ... }:
 
 let
-  configPath = "/Users/ctso/src/nixos/modules/home-manager/common/apps/hammerspoon/config";
+  configPath = "${util.repoPath}/modules/home-manager/common/apps/hammerspoon/config";
 in
-{
+lib.mkIf pkgs.stdenv.isDarwin {
   home.file.".hammerspoon/init.lua".source = config.lib.file.mkOutOfStoreSymlink "${configPath}/init.lua";
 
   # Install SpoonInstall if it doesn't exist

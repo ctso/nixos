@@ -20,7 +20,7 @@ let
     };
 
   util = {
-    inherit linkSharedApp;
+    inherit linkSharedApp repoPath;
   };
 in
 util

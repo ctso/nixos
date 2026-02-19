@@ -1,7 +1,7 @@
-{ inputs, pkgs, config, ... }:
+{ inputs, pkgs, config, util, ... }:
 
 let
-  repoPath = "/Users/ctso/src/nixos";
+  repoPath = util.repoPath;
   skillsPath = "${repoPath}/modules/home-manager/common/apps/claude-code/skills";
   skills = [
     "merge"

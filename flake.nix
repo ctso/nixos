@@ -79,9 +79,9 @@
       formatter = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux" ] (system: nixpkgs.legacyPackages.${system}.nixpkgs-rfc-style);
 
       mkUtil =
-        hostname:
+        hostname: repoPath:
         import ./util.nix {
-          hostname = hostname;
+          inherit hostname repoPath;
           lib = nixpkgs.lib;
         };
 
@@ -104,7 +104,7 @@
                 outputs
                 vars
                 ;
-              util = mkUtil vars.hostname;
+              util = mkUtil vars.hostname "/home/${vars.defaultUser}/src/nixos";
               nixosModules = outputs.nixosModules;
               hmModules = outputs.hmModules;
             };
@@ -148,7 +148,7 @@
                 outputs
                 vars
                 ;
-              util = mkUtil vars.hostname;
+              util = mkUtil vars.hostname "/Users/${vars.defaultUser}/src/nixos";
               darwinModules = outputs.darwinModules;
               hmModules = outputs.hmModules;
             };

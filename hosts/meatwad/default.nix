@@ -13,6 +13,8 @@
 
   time.timeZone = vars.timeZone;
 
+  services.tailscale.enable = true;
+
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "no";

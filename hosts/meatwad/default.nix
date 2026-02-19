@@ -1,4 +1,4 @@
-{ vars, nixosModules, ... }:
+{ vars, nixosModules, pkgs, ... }:
 
 {
   imports = [
@@ -22,9 +22,12 @@
     settings.PermitRootLogin = "no";
   };
 
+  programs.zsh.enable = true;
+
   users.users.${vars.defaultUser} = {
     isNormalUser = true;
     home = "/home/${vars.defaultUser}";
+    shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMxEhsFd5OjD8wJNb4N0HKrPyJkEeuZETFs9MOihrADX"

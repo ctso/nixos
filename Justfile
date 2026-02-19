@@ -1,22 +1,22 @@
-# Justfile for nix-darwin configuration
+# Justfile for nix configuration
 
 hostname := `hostname -s`
+os := os()
 
-# Rebuild and switch to the darwin configuration
-default: update
-    sudo darwin-rebuild switch --flake .#{{hostname}}
+# Rebuild and switch to the configuration
+default: update rebuild
 
-# Rebuild and switch (alias for default)
+# Rebuild and switch
 rebuild:
-    sudo darwin-rebuild switch --flake .#{{hostname}}
+    {{ if os == "macos" { "sudo darwin-rebuild switch --flake .#" + hostname } else { "sudo nixos-rebuild switch --flake .#" + hostname } }}
 
 # Show the current configuration
 show:
-    sudo darwin-rebuild show --flake .#{{hostname}}
+    {{ if os == "macos" { "sudo darwin-rebuild show --flake .#" + hostname } else { "nixos-rebuild list-generations" } }}
 
 # Check the configuration for errors
 check:
-    sudo darwin-rebuild check --flake .#{{hostname}}
+    {{ if os == "macos" { "sudo darwin-rebuild check --flake .#" + hostname } else { "nix flake check" } }}
 
 # Update flake inputs
 update:
@@ -25,4 +25,3 @@ update:
 # Garbage collect unused nix store entries
 gc:
     nix-collect-garbage -d
-

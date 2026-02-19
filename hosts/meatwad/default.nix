@@ -15,6 +15,8 @@
 
   services.tailscale.enable = true;
 
+  programs.mosh.enable = true;
+
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "no";

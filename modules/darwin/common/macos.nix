@@ -41,6 +41,9 @@
     WindowManager = {
       EnableStandardClickToShowDesktop = false;
     };
+    trackpad = {
+      TrackpadThreeFingerHorizSwipeGesture = 0;
+    };
     NSGlobalDomain = {
       KeyRepeat = 1;
       InitialKeyRepeat = 10;

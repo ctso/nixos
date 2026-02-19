@@ -20,6 +20,8 @@ spoon.SpoonInstall:andUse("PaperWM", {
 		window_ratios = { 1 / 4, 1 / 3, 1 / 2, 2 / 3, 3 / 4, 1 },
 		drag_window = { "shift", "ctrl", "alt" },
 		lift_window = { "ctrl", "alt" },
+		swipe_fingers = 3,
+		swipe_gain = 1,
 	},
 	hotkeys = {
 		-- Switch to left/right/up/down window

@@ -1,4 +1,4 @@
-{ hmModules, ... }:
+{ hmModules, lib, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
   ];
 
   programs.git.settings = {
-    commit.gpgsign = false;
-    tag.gpgsign = false;
+    commit.gpgsign = lib.mkForce false;
+    tag.gpgsign = lib.mkForce false;
   };
 }

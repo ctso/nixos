@@ -22,8 +22,9 @@
     isNormalUser = true;
     home = "/home/${vars.defaultUser}";
     extraGroups = [ "wheel" ];
-    # TODO: add your authorized SSH keys
-    # openssh.authorizedKeys.keys = [ ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMxEhsFd5OjD8wJNb4N0HKrPyJkEeuZETFs9MOihrADX"
+    ];
   };
 
   system.stateVersion = "24.11";

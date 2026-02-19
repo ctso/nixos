@@ -23,6 +23,7 @@ in
     just
     kubectl
     kubectx
+    mosh
     nodejs_22
     php
     python314

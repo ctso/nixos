@@ -27,7 +27,7 @@
           --model haiku \
           --setting-sources "" \
           --disable-slash-commands \
-          "$*"
+          "$*" | glow
       }
 
       # Set default editor

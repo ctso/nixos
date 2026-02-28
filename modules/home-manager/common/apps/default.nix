@@ -9,6 +9,7 @@
     ./eza
     ./fastfetch
     ./ghostty
+    ./glow
     ./hammerspoon
     ./karabiner
     ./lazygit

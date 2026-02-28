@@ -15,6 +15,8 @@
 
       font-family = "JetBrainsMono Nerd Font Mono";
 
+      line-height = "1.3";
+
       background-opacity = 0.95;
       background-blur = 20;
 

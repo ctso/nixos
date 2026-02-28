@@ -12,7 +12,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    corepack
     awscli2
     composer
     fzf

@@ -22,6 +22,14 @@
       wm = "workmux";
     };
     initContent = ''
+      c() {
+        CLAUDE_CODE_SIMPLE=1 claude -p \
+          --model haiku \
+          --setting-sources "" \
+          --disable-slash-commands \
+          "$*"
+      }
+
       # Set default editor
       export EDITOR="vim"
 

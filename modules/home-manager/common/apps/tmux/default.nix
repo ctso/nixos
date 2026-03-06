@@ -28,9 +28,8 @@
     ];
 
     extraConfig = ''
-      # Don't let programs rename windows, but auto-name based on current process
       set-window-option -g allow-rename off
-      set-window-option -g automatic-rename on
+      set-window-option -g automatic-rename off
     '';
   };
 

@@ -15,10 +15,6 @@
       "coder/coder"
     ];
 
-    brews = [
-      "mole"
-    ];
-
     casks =
       builtins.map
         (cask: {
